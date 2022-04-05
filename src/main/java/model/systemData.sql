@@ -21,11 +21,11 @@ create table book(
 
 create table customersBorrowBooks(
                                      id_customer_book int auto_increment primary key,
-                                     name_of_user varchar(80),
+                                     id_user int,
                                      customer_address varchar(120),
                                      customer_birthday DATE,
                                      id_book int,
-                                     foreign key (name_of_user) references user(name_of_user),
+                                     foreign key (id_user) references user(id_user),
                                      foreign key (id_book) references book(id_book)
 );
 
