@@ -34,6 +34,7 @@ insert into book( name_of_book,author, book_description, book_status, book_amoun
 select * from book;
 create table customersBorrowBooks(
                                      id_customer_book int auto_increment primary key,
+<<<<<<< HEAD
                                      name_of_user nvarchar(80),
                                      customer_address nvarchar(120),
                                      customer_birthday DATE,
@@ -41,6 +42,15 @@ create table customersBorrowBooks(
                                      foreign key (name_of_user) references user(name_of_user),
                                      foreign key (id_book) references book(id_book),
                                      foreign key (customer_birthday)references user(date_of_birth)
+=======
+                                     id_user int,
+                                     customer_address varchar(120),
+                                     customer_birthday DATE,
+                                     id_book int,
+                                     foreign key (id_user) references user(id_user),
+                                     foreign key (id_book) references book(id_book)
+);
+>>>>>>> 3011a43f32dba27ad3613d894e207a3eede37ac9
 
 );
 insert into customersBorrowBooks( name_of_user, customer_address, customer_birthday, id_book)
