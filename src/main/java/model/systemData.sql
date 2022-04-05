@@ -49,3 +49,10 @@ create table admin(
                       foreign key (id_book) references book(id_book),
                       foreign key (id_user) references user(id_user)
 );
+
+create table LibrarianBean(
+    id_librarian_bean int auto_increment primary key,
+    name_librarian_bean varchar(60),
+    email_librabian_bean varchar(60),
+    phone_number_librabian varchar(12)
+);
