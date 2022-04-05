@@ -66,6 +66,18 @@ insert into loanSlip(on_loan_status, out_of_date, returned_the_book, id_book, id
     value (true ,'2022/2/1','2022/2/15', 1,2);
 insert into loanSlip(on_loan_status, out_of_date, returned_the_book, id_book, id_user)
     value (true ,'2022/1/20','2022/2/1', 2,3);
+
+create table librarian(
+    id_librarian int primary key not null ,
+    name varchar (50),
+    id_user int,
+    id_customersBorrowBook int,
+    id_loanSlip int,
+    foreign key (id_user) references user(id_user),
+    foreign key (id_customersBorrowBook) references customersBorrowBooks(id_customer_book),
+    foreign key (id_loanSlip) references loanSlip(id_loan_slip)
+)
+
 create table admin(
                       id_admin int auto_increment primary key,
                       name_admin varchar(60),
