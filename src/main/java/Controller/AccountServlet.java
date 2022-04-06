@@ -45,7 +45,7 @@ public class AccountServlet extends HttpServlet {
             default:
                 HttpSession session = request.getSession(false);
                 if (session.getAttribute("admin") != null) {
-                    RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("adminSection.jsp");
                     ((RequestDispatcher) dispatcher).forward(request, response);
                 }else {
                     String message = "Please login first";
@@ -70,7 +70,7 @@ public class AccountServlet extends HttpServlet {
                 if (email.equals("admin@gmail.com") && password.equals("123456")) {
                     HttpSession session = request.getSession();
                     session.setAttribute("admin","true");
-                    request.getRequestDispatcher("login.jsp").forward(request,response);
+                    request.getRequestDispatcher("adminSection.jsp").forward(request,response);
                 } else {
                     String message = "Invalid email/password";
                     request.setAttribute("messagelogin", message);
