@@ -5,10 +5,14 @@
     <file type="web" url="file://$PROJECT_DIR$" />
   </component>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="corretto-15" project-jdk-type="JavaSDK">
 =======
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
 >>>>>>> 3011a43f32dba27ad3613d894e207a3eede37ac9
+=======
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="openjdk-18 (2)" project-jdk-type="JavaSDK">
+>>>>>>> quanLe
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="ProjectType">

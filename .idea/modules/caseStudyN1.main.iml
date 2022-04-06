@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <module external.linked.project.id="caseStudyN1:main" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="org.example" external.system.module.type="sourceSet" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+=======
+<module version="4">
+>>>>>>> quanLe
   <component name="FacetManager">
     <facet type="web" name="Web Gradle : caseStudyN1-1.0-SNAPSHOT.war">
       <configuration>
@@ -9,6 +13,7 @@
       </configuration>
     </facet>
   </component>
+<<<<<<< HEAD
   <component name="NewModuleRootManager">
     <output url="file://$MODULE_DIR$/../../build/classes/java/main" />
     <exclude-output />
@@ -22,4 +27,6 @@
     <orderEntry type="library" name="Gradle: mysql:mysql-connector-java:8.0.23" level="project" />
     <orderEntry type="library" name="Gradle: com.google.protobuf:protobuf-java:3.11.4" level="project" />
   </component>
+=======
+>>>>>>> quanLe
 </module>
