@@ -3,9 +3,15 @@ use LibraryManagement;
 
 create table user(
                      id_user int auto_increment primary key,
+<<<<<<< HEAD
                      name_of_user nvarchar(80) not null,
                      date_of_birth date not null primary key ,
                      email_user varchar(60) unique ,
+=======
+                     name_of_user varchar(80) not null,
+                     email_user varchar(80) not null,
+                     password_user varchar(60),
+>>>>>>> quanLe
                      phone_number int(12)
 );
 insert into user ( name_of_user, date_of_birth, email_user, phone_number) value ("Nguyễn Thị Hoa",'1998/5/13',"hoa@gmail.com",123456);
