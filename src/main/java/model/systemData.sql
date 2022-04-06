@@ -61,10 +61,10 @@ create table LoanSlipDetails(
                                 foreign key (id) references LoanSlip(id)
 );
 
-create table Admin(
-                      id int auto_increment primary key,
-                      name varchar(60),
-                      phoneNumber varchar(12),
+create table LibrarianBean(
+                      id_librabian int auto_increment primary key,
+                      name_librabian varchar(60),
+                      phone_librabian varchar(12),
                       idTitle int,
                       idUser int,
                       foreign key (idTitle) references TitleBook(id),
