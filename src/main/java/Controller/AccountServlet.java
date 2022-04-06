@@ -26,12 +26,12 @@ public class AccountServlet extends HttpServlet {
         }
         switch (action) {
             case "admin":
-                request.getRequestDispatcher("loginadminform.jsp").forward(request,response);
+                request.getRequestDispatcher("/LoginForm/loginadminform.jsp").forward(request,response);
                 break;
             case "user":
-                request.getRequestDispatcher("loginuser.jsp").forward(request, response);
+                request.getRequestDispatcher("/LoginForm/loginuser.jsp").forward(request, response);
             case "adduser":
-                request.getRequestDispatcher("adduser.jsp").forward(request,response);
+                request.getRequestDispatcher("/LoginForm/adduser.jsp").forward(request,response);
                 break;
             case "showuser":
                 List<User> list2 = UserDAO.view();
