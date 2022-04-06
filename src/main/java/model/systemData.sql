@@ -4,8 +4,8 @@ use LibraryManagement;
 create table user(
                      id_user int auto_increment primary key,
                      name_of_user varchar(80) not null,
-                     date_of_birth varchar(80) not null,
-                     email_user varchar(60),
+                     email_user varchar(80) not null,
+                     password_user varchar(60),
                      phone_number int(12)
 );
 
