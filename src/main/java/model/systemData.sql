@@ -1,51 +1,76 @@
 create database LibraryManagement;
 use LibraryManagement;
 
-create table user(
+create table User(
                      id_user int auto_increment primary key,
                      name_of_user varchar(80) not null,
-                     date_of_birth varchar(80) not null,
-                     email_user varchar(60),
+                     email_user varchar(80) not null,
+                     password_user varchar(60),
                      phone_number int(12)
 );
 
-create table book(
-                     id_book int auto_increment primary key,
-                     name_of_book varchar(60) not null,
-                     book_description varchar(60),
-                     book_status varchar(60),
-                     book_amount int,
-                     book_kind varchar(60),
-                     book_publishing varchar(50)
+create table Customer(
+                         id int auto_increment primary key,
+                         name nvarchar(80) not null,
+                         birth date not null,
+                         address nvarchar(120),
+                         email nvarchar(60),
+                         phoneNumber int(12)
 );
 
-create table customersBorrowBooks(
-                                     id_customer_book int auto_increment primary key,
-                                     id_user int,
-                                     customer_address varchar(120),
-                                     customer_birthday DATE,
-                                     id_book int,
-                                     foreign key (id_user) references user(id_user),
-                                     foreign key (id_book) references book(id_book)
+create table TitleBook(
+                          id int auto_increment primary key,
+                          name nvarchar(60)
 );
 
-create table loanSlip(
-                         id_loan_slip int auto_increment primary key,
-                         on_loan_status varchar(60),
-                         out_of_date date,
-                         returned_the_book varchar(60),
-                         id_book int,
-                         id_user int,
-                         foreign key (id_book) references book(id_book),
-                         foreign key (id_user) references user(id_user)
+create table Book(
+                     id int auto_increment primary key,
+                     idTitle int,
+                     name nvarchar(60) not null,
+                     description nvarchar(60),
+                     amount int,
+                     kind nvarchar(60),
+                     publishing nvarchar(50),
+                     status varchar(60),
+                     foreign key (idTitle) references TitleBook(id)
 );
 
-create table admin(
-                      id_admin int auto_increment primary key,
-                      name_admmin varchar(60),
-                      phone_admin varchar(12),
-                      id_book int,
-                      id_user int,
-                      foreign key (id_book) references book(id_book),
-                      foreign key (id_user) references user(id_user)
+create table ListCustomerBooks(
+                                  id int auto_increment primary key,
+                                  idUser int,
+                                  address nvarchar(120),
+                                  birth date,
+                                  idBook int,
+                                  foreign key (idUser) references Customer(id),
+                                  foreign key (idBook) references Book(id)
 );
+
+create table LoanSlip(
+                         id int auto_increment primary key,
+                         borrowedDate date,
+                         returnedDate date,
+                         idBook int,
+                         idUser int,
+                         foreign key (idBook) references Book(id),
+                         foreign key (idUser) references Customer(id)
+);
+
+create table LoanSlipDetails(
+                                id int auto_increment primary key,
+                                status nvarchar(60),
+                                foreign key (id) references LoanSlip(id)
+);
+
+create table Admin(
+                      id int auto_increment primary key,
+                      name varchar(60),
+                      phoneNumber varchar(12),
+                      idBook int,
+                      idUser int,
+                      foreign key (idBook) references Book(id),
+                      foreign key (idUser) references Customer(id)
+);
+insert into Customer(name, birth, address, email, phonenumber) values ('Do Hung Dung','1992/2/6','Ha Noi','dung@gmail.com','0967456328');
+insert into Customer(name, birth, address, email, phonenumber) values ('Tran Van Nam','1994/6/6','Ha Nam','nam@gmail.com','0967456368');
+select * from Customer;
+select name,birth,address,email,phoneNumber from Customer;
