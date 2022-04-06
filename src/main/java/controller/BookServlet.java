@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(name = "BookServlet", value = "/BookServlet")
+@WebServlet(name = "BookServlet", value = "/book")
 public class BookServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private BookDAO bookDAO;

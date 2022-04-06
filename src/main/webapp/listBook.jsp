@@ -14,11 +14,24 @@
 <body>
 <center>
     <h1>Thư viện sách</h1>
+    <h2 >
+    <a href="/book?action=create">Add new book</a>
+</h2>
 </center>
 <div align="center">
     <table border="1" cellpadding="5">
         <caption>
-            <h2></h2>
+            <h2>List of book</h2>
         </caption>
+        <tr>
+        <th>ID</th>
+        <th>IdTitle</th>
+        <th>name</th>
+        <th>Description</th>
+        <th>Amount</th>
+        <th>Kind</th>
+        <th>Publishing</th>
+    </tr>
+
 </body>
 </html>
