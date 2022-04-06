@@ -31,7 +31,20 @@
         <th>Amount</th>
         <th>Kind</th>
         <th>Publishing</th>
+        <th>Action</th>
     </tr>
+        <c:forEach var="books" items="${listBook}">
+        <tr>
+            <td><c:out value="${books.id}"/></td>
+            <td><c:out value="${books.idTitle}"/></td>
+            <td><c:out value="${books.name}"/></td>
+            <td><c:out value="${books.description}"/></td>
+            <td><c:out value="${books.amount}"/></td>
+            <td><c:out value="${books.kind}"/></td>
+            <td><c:out value="${books.publishing}"/></td>
+        </tr>
+
+        </c:forEach>
 
 </body>
 </html>
