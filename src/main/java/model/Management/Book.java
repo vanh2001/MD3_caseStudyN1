@@ -1,100 +1,100 @@
 package model.Management;
 
 public class Book {
-    int id;
-    int idTitle;
-    String name;
-    String description;
-    int amount;
-    String kind;
-    String publishing;
-    String status;
+    int id_book;
+    int id_title_book;
+    String name_book;
+    String description_book;
+    int amount_book;
+    String kind_book;
+    String publishing_book;
+    String status_book;
 
     public Book() {
     }
 
-    public Book(int id, int idTitle, String name, String description, int amount, String kind, String publishing, String status) {
-        this.id = id;
-        this.idTitle = idTitle;
-        this.name = name;
-        this.description = description;
-        this.amount = amount;
-        this.kind = kind;
-        this.publishing = publishing;
-        this.status = status;
+    public Book(int id_book, int id_title_book, String name_book, String description_book, int amount_book, String kind_book, String publishing_book, String status_book) {
+        this.id_book = id_book;
+        this.id_title_book = id_title_book;
+        this.name_book = name_book;
+        this.description_book = description_book;
+        this.amount_book = amount_book;
+        this.kind_book = kind_book;
+        this.publishing_book = publishing_book;
+        this.status_book = status_book;
     }
 
-    public Book(int idTitle, String name, String description, int amount, String kind, String publishing, String status) {
-        this.idTitle = idTitle;
-        this.name = name;
-        this.description = description;
-        this.amount = amount;
-        this.kind = kind;
-        this.publishing = publishing;
-        this.status = status;
+    public Book(int id_title_book, String name_book, String description_book, int amount_book, String kind_book, String publishing_book, String status_book) {
+        this.id_title_book = id_title_book;
+        this.name_book = name_book;
+        this.description_book = description_book;
+        this.amount_book = amount_book;
+        this.kind_book = kind_book;
+        this.publishing_book = publishing_book;
+        this.status_book = status_book;
     }
 
-    public int getId() {
-        return id;
+    public int getId_book() {
+        return id_book;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId_book(int id_book) {
+        this.id_book = id_book;
     }
 
-    public int getIdTitle() {
-        return idTitle;
+    public int getId_title_book() {
+        return id_title_book;
     }
 
-    public void setIdTitle(int idTitle) {
-        this.idTitle = idTitle;
+    public void setId_title_book(int id_title_book) {
+        this.id_title_book = id_title_book;
     }
 
-    public String getName() {
-        return name;
+    public String getName_book() {
+        return name_book;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName_book(String name_book) {
+        this.name_book = name_book;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDescription_book() {
+        return description_book;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescription_book(String description_book) {
+        this.description_book = description_book;
     }
 
-    public int getAmount() {
-        return amount;
+    public int getAmount_book() {
+        return amount_book;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setAmount_book(int amount_book) {
+        this.amount_book = amount_book;
     }
 
-    public String getKind() {
-        return kind;
+    public String getKind_book() {
+        return kind_book;
     }
 
-    public void setKind(String kind) {
-        this.kind = kind;
+    public void setKind_book(String kind_book) {
+        this.kind_book = kind_book;
     }
 
-    public String getPublishing() {
-        return publishing;
+    public String getPublishing_book() {
+        return publishing_book;
     }
 
-    public void setPublishing(String publishing) {
-        this.publishing = publishing;
+    public void setPublishing_book(String publishing_book) {
+        this.publishing_book = publishing_book;
     }
 
-    public String getStatus() {
-        return status;
+    public String getStatus_book() {
+        return status_book;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setStatus_book(String status_book) {
+        this.status_book = status_book;
     }
 }

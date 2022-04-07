@@ -1,5 +1,5 @@
-create database LibraryManagement;
-use LibraryManagement;
+create database LibraryManagement1;
+use LibraryManagement1;
 
 create table User(
                      id_user int auto_increment primary key,
@@ -22,6 +22,7 @@ create table TitleBook(
                           id_title_book int auto_increment primary key,
                           name_title_book nvarchar(60)
 );
+insert into TitleBook(id_title_book, name_title_book) VALUES (1,"Sách thiếu nhi");
 
 create table Book(
                      id_book int auto_increment primary key,
@@ -34,6 +35,8 @@ create table Book(
                      status_book varchar(60),
                      foreign key (id_title_book) references TitleBook(id_title_book)
 );
+insert into Book( id_title_book, name_book, description_book, amount_book, kind_book, publishing_book, status_book)
+value (1,"Hoàng tử bé","Sách nước ngoài",10,"Sách thiếu nhi","NXB Kim Đồng","Mới");
 
 create table ListCustomerBooks(
                                   id_list_customer int auto_increment primary key,
