@@ -36,9 +36,9 @@ public class AccountServlet extends HttpServlet {
                 request.getRequestDispatcher("addlibrarianform.jsp").forward(request,response);
                 break;
             case "user":
-                request.getRequestDispatcher("loginuser.jsp").forward(request,response);
+                request.getRequestDispatcher("loginUser.jsp").forward(request,response);
             case "adduser":
-                request.getRequestDispatcher("adduser.jsp").forward(request,response);
+                request.getRequestDispatcher("addUser.jsp").forward(request,response);
                 break;
             case "deletelib":
                 String sid=request.getParameter("id");
@@ -54,7 +54,6 @@ public class AccountServlet extends HttpServlet {
                 request.getRequestDispatcher("editlibrarianform.jsp").forward(request,response);
                 break;
             case "showlib":
-//                List<LibrarianBean> list=LibrarianDao.view();
                 List<LibrarianBean> list = LibrabianDAO.view();
                 request.setAttribute("listLib", list);
                 request.getRequestDispatcher("viewlibrarian.jsp").forward(request,response);
@@ -71,7 +70,7 @@ public class AccountServlet extends HttpServlet {
             default:
                 HttpSession session = request.getSession(false);
                 if (session.getAttribute("admin") != null) {
-                    RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("adminSection.jsp");
                     dispatcher.forward(request, response);
                 }else if(session.getAttribute("email") != null){
                     RequestDispatcher dispatcher = request.getRequestDispatcher("loginlib.jsp");
@@ -101,7 +100,7 @@ public class AccountServlet extends HttpServlet {
                     HttpSession session=request.getSession();
                     session.setAttribute("admin","true");
 
-                    request.getRequestDispatcher("login.jsp").forward(request,response);
+                    request.getRequestDispatcher("adminSection.jsp").forward(request,response);
                 }else{
                     String message = "Invalid email/password";
                     request.setAttribute("messagelogin", message);
@@ -143,7 +142,7 @@ public class AccountServlet extends HttpServlet {
                 UserDAO.save(bean4);
                 String message2 = "Register Successfully! Click User for back to Login User Form";
                 request.setAttribute("messageadduserres", message2);
-                request.getRequestDispatcher("adduser.jsp").forward(request,response);
+                request.getRequestDispatcher("addUser.jsp").forward(request,response);
                 break;
             case "user":
                 String email5=request.getParameter("email");
@@ -156,7 +155,7 @@ public class AccountServlet extends HttpServlet {
                     String message3 = "Invalid email/password";
                     request.setAttribute("messageloginuser", message3);
                 }
-                request.getRequestDispatcher("loginuser.jsp").forward(request,response);
+                request.getRequestDispatcher("loginUser.jsp").forward(request,response);
                 break;
             case "editlib":
                 String sid=request.getParameter("id");

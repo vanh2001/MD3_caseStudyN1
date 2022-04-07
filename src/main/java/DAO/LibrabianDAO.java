@@ -10,11 +10,13 @@ import java.util.List;
 
 public class LibrabianDAO {
 
+    public static final String INSERT_LIBRARIAN_SQL = "insert into LibrarianBean(name_librarian_bean, email_librabian_bean, password_librabian_bean, phone_librarian_bean) VALUES (?,?,?,?);";
+
     public static int save(LibrarianBean bean) {
         int status = 0;
         try {
             Connection connection = DB.getConnection();
-            PreparedStatement  preparedStatement = connection.prepareStatement("insert into LibrarianBean(name_librarian_bean, email_librarian_bean, password_librarian_bean, phone_librarian_bean) values (?, ?, ?, ?)");
+            PreparedStatement  preparedStatement = connection.prepareStatement(INSERT_LIBRARIAN_SQL);
             preparedStatement.setString(1, bean.getNameLibrarian());
             preparedStatement.setString(2,bean.getEmailLibrarian());
             preparedStatement.setString(3,bean.getPasswordLibrarian());
@@ -31,7 +33,7 @@ public class LibrabianDAO {
         int status = 0;
         try {
            Connection connection = DB.getConnection();
-           PreparedStatement preparedStatement = connection.prepareStatement("update LibrarianBean set name_librarian_bean = ?, email_librarian_bean = ?, password_librarian_bean = ?, phone_librarian_bean = ? when id_librarian_bean = ?");
+           PreparedStatement preparedStatement = connection.prepareStatement("update LibrarianBean set name_librarian_bean = ?, email_librarian_bean = ?, password_librarian_bean = ?, phone_librarian_bean = ? where id_librarian_bean = ?");
            preparedStatement.setString(1, bean.getNameLibrarian());
            preparedStatement.setString(2, bean.getEmailLibrarian());
            preparedStatement.setString(3,bean.getPasswordLibrarian());
@@ -55,8 +57,8 @@ public class LibrabianDAO {
                 LibrarianBean bean = new LibrarianBean();
                 bean.setIdLibrarian(resultSet.getInt("id_librarian_bean"));
                 bean.setNameLibrarian(resultSet.getString("name_librarian_bean"));
-                bean.setEmailLibrarian(resultSet.getString("email_librarian_bean"));
-                bean.setPasswordLibrarian(resultSet.getString("password_librarian_bean"));
+                bean.setEmailLibrarian(resultSet.getString("email_librabian_bean"));
+                bean.setPasswordLibrarian(resultSet.getString("password_librabian_bean"));
                 bean.setPhoneLibrarian(resultSet.getLong("phone_librarian_bean"));
                 list.add(bean);
             }
@@ -105,7 +107,7 @@ public class LibrabianDAO {
         boolean status = false;
         try {
             Connection connection = DB.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("select * from LibrarianBean where email_librarian_bean = ? and  password_librarian_bean = ?");
+            PreparedStatement preparedStatement = connection.prepareStatement("select * from LibrarianBean where email_librabian_bean = ? and  password_librabian_bean = ?");
             preparedStatement.setString(1, emailLibrarian);
             preparedStatement.setString(2, passwordLibrarian);
             ResultSet resultSet = preparedStatement.executeQuery();

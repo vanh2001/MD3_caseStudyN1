@@ -1,9 +1,17 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: lequan
+  Date: 4/7/22
+  Time: 11:38 AM
+  To change this template use File | Settings | File Templates.
+--%>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login Admin Form</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <title>Login Librarian Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -11,7 +19,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only"></span>
+                <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -33,23 +41,20 @@
     </div><!-- /.container-fluid -->
 </nav>
 <div class='container'>
-    <h3>Admin Login</h3>
-    ${messagelogin}
-    <form action="account?action=admin" method="post" style="width:300px">
+    <h3>Librarian Login</h3>
+    ${messageloginlib}
+    <form action="account?action=librarian" method="post" style="width:300px">
         <div class="form-group">
             <label for="email1">Email address</label>
-            <input type="email" class="form-control" name="email" id="email1" placeholder="Email"/>
+            <input type="email" class="form-control" id="email1" name="email" placeholder="Email"/>
         </div>
         <div class="form-group">
             <label for="password1">Password</label>
-            <input type="password" class="form-control" name="password" id="password1" placeholder="Password"/>
+            <input type="password" class="form-control" id="password1" name="password" placeholder="Password"/>
         </div>
         <button type="submit" class="btn btn-primary">Login</button>
     </form>
 </div>
+
 </body>
 </html>
-
-
-
-

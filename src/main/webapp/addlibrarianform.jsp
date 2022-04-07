@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Admin Section</title>
+    <title>Add Librarian Form</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -24,7 +24,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="account">Home</a></li>
+                <li><a href="/account">Home</a></li>
                 <li><a href="account?action=addlibrarian">Add Librarian</a></li>
                 <li><a href="account?action=showlib">View Librarian</a></li>
                 <li><a href="account?action=showuser">View User</a></li>
@@ -34,37 +34,28 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZnJlZSUyMGxpYnJhcnl8ZW58MHx8MHx8&w=1000&q=80" width="100%" alt="baby 1" >
+<div class='container'>
+    ${messageaddlib}
+    <h3>Add Librarian</h3>
+    <form action="account?action=addlibrarian" method="post" style="width:300px">
+        <div class="form-group">
+            <label for="name1">Name</label>
+            <input type="text" class="form-control" name="name" id="name1" placeholder="Name"/>
         </div>
-
-        <div class="item">
-            <img src="https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="100%" alt="baby 2" >
+        <div class="form-group">
+            <label for="email1">Email address</label>
+            <input type="email" class="form-control" name="email" id="email1" placeholder="Email"/>
         </div>
-
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div><!-- corousel end -->
-
+        <div class="form-group">
+            <label for="password1">Password</label>
+            <input type="password" class="form-control" name="password" id="password1" placeholder="Password"/>
+        </div>
+        <div class="form-group">
+            <label for="mobile1">Mobile Number</label>
+            <input type="number" class="form-control" name="mobile" id="mobile1" placeholder="Mobile"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 </div>
-
 </body>
 </html>

@@ -24,7 +24,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/account">eLibrary</a>
+            <a class="navbar-brand" href="account">Li-bra-ry</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->

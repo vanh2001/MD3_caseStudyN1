@@ -2,8 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Index</title>
+  <title>Librarian Section</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -18,49 +17,38 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="account">Li-bra-ry</a>
+      <a class="navbar-brand" href="account">eLibrary</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="account" class="active">Home</a></li>
-        <li><a href="account?action=admin" class="active">Admin</a></li>
-        <li><a href="account?action=librarian" class="active">Librarian</a></li>
-        <li><a href="account?action=user" class="active">User</a></li>
+        <li><a href="account">Home</a></li>
+        <li><a href="book?action=AddBookForm">Add Book</a></li>
+        <li><a href="book?action=ViewBook">View Book</a></li>
+        <li><a href="book?action=ReturnBookForm">Return Book</a></li>
+        <li><a href="account?action=logout">Logout</a></li>
       </ul>
 
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-    <li data-target="#myCarousel" data-slide-to="3"></li>
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="https://images.pexels.com/photos/1907785/pexels-photo-1907785.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="100%" alt="baby 1" >
+      <img src="https://images.pexels.com/photos/1907785/pexels-photo-1907785.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500 " width="100%" alt="baby 1" >
     </div>
 
     <div class="item">
       <img src="https://image.shutterstock.com/z/stock-photo-round-bookshelf-in-public-library-170760092.jpg" width="100%" alt="baby 2" >
-    </div>
-
-    <div class="item">
-      <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8ZnJlZSUyMGxpYnJhcnl8ZW58MHx8MHx8&w=1000&q=80" width="100%" alt="baby 3" >
-    </div>
-
-    <div class="item">
-      <img src="https://images.unsplash.com/photo-1568667256549-094345857637?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGlicmFyaWVzfGVufDB8fDB8fA%3D%3D&w=1000&q=80" width="100%" alt="baby 4" >
     </div>
 
   </div>
@@ -76,5 +64,6 @@
   </a>
 </div><!-- corousel end -->
 
+</div>
 </body>
 </html>

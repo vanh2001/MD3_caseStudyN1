@@ -4,8 +4,8 @@ use LibraryManagement;
 create table User(
                      id_user int auto_increment primary key,
                      name_of_user varchar(80) not null,
-                     password_user varchar(60) not null,
                      email_user varchar(100),
+                     password_user varchar(60) not null,
                      phone_number int(12)
 );
 
@@ -67,9 +67,6 @@ create table LibrarianBean(
                       name_librarian_bean varchar(60),
                       email_librabian_bean varchar(60),
                       password_librabian_bean varchar(20),
-                      phone_librarian_bean varchar(12),
-                      id_title_book int,
-                      id_customer int,
-                      foreign key (id_title_book) references TitleBook(id_title_book),
-                      foreign key (id_customer) references Customer(id_customer)
+                      phone_librarian_bean varchar(12)
 );
+

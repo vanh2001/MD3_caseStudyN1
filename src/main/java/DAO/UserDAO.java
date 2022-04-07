@@ -5,6 +5,7 @@ import model.Management.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +15,7 @@ public class UserDAO {
         int status = 0;
         try {
             Connection connection = DB.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("insert into user(name_of_user, email_user, password_user, phone_number) value (?,?,?,?)");
+            PreparedStatement preparedStatement = connection.prepareStatement("insert into User(name_of_user, email_user, password_user, phone_number) VALUES (?, ?, ?, ?);");
             preparedStatement.setString(1, bean.getNameUser());
             preparedStatement.setString(2,bean.getEmailUser());
             preparedStatement.setString(3, bean.getPasswordUser());
@@ -31,7 +32,7 @@ public class UserDAO {
         int  status = 0;
         try {
             Connection connection = DB.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("update user set name_of_user = ?, email_user = ?, password_user = ?, phone_number = ? when id_user = ?");
+            PreparedStatement preparedStatement = connection.prepareStatement("update user set name_of_user = ?, email_user = ?, password_user = ?, phone_number = ? where id_user = ?");
             preparedStatement.setString(1, bean.getNameUser());
             preparedStatement.setString(2, bean.getEmailUser());
             preparedStatement.setString(3, bean.getPasswordUser());
@@ -49,7 +50,7 @@ public class UserDAO {
         List<User> list = new ArrayList<>();
         try {
             Connection connection = DB.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("select * from user");
+            PreparedStatement preparedStatement = connection.prepareStatement("select * from User");
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 User bean = new User();
@@ -102,13 +103,13 @@ public class UserDAO {
         return status;
     }
 
-    public static boolean authenticate(String email, String password) {
+    public static boolean authenticate(String emailUser, String passwordUser) {
         boolean status = false;
         try {
             Connection connection = DB.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("select * from user where email_user = ? and password_user = ? ");
-            preparedStatement.setString(1, email);
-            preparedStatement.setString(2, password);
+            PreparedStatement preparedStatement = connection.prepareStatement("select * from User where email_user = ? and password_user = ? ");
+            preparedStatement.setString(1, emailUser);
+            preparedStatement.setString(2, passwordUser);
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
                 status = true;
@@ -119,4 +120,5 @@ public class UserDAO {
         }
         return status;
     }
+
 }
