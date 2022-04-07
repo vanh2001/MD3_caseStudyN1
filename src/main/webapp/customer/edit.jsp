@@ -9,7 +9,22 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Customer Manager</title>
+    <style>
+        body {
+            background-color: darkkhaki;
+        }
+
+        h1 {
+            color: skyblue;
+            text-align: center;
+        }
+
+        p {
+            font-family: verdana;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
 <center>
