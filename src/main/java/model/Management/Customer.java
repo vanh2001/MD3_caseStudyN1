@@ -1,6 +1,5 @@
 package model.Management;
 
-import java.util.Date;
 
 public class Customer {
     private int id_customer;
@@ -11,6 +10,11 @@ public class Customer {
     private String phoneNumber_customer;
 
     public Customer(String name_customer, String birth_customer, String address_customer, String email_customer, String phoneNumber_customer) {
+        this.name_customer = name_customer;
+        this.birth_customer = birth_customer;
+        this.address_customer = address_customer;
+        this.email_customer = email_customer;
+        this.phoneNumber_customer = phoneNumber_customer;
     }
 
     public Customer(int id_customer, String name_customer, String birth_customer, String address_customer, String email_customer, String phoneNumber_customer) {

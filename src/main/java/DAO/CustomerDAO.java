@@ -11,7 +11,7 @@ public class CustomerDAO implements ICustomerDao {
     public static final String SELECT_FROM_CUSTOMER = "select * from customer";
     public static final String SELlEC_CUSTOMER_ByID = "select name_customer,birth_customer,address_customer,email_customer,phoneNumber_customer from Customer where id_customer=?;";
     private static final String DELETE_USERS_SQL = "delete from customer where id_customer = ?;";
-    private static final String UPDATE_USERS_SQL = "update customer set name_customer = ?,email_customer= ?, address_customer=?,birth_customer=?,phoneNumber_cutomer =? where id_customer = ?;";
+    private static final String UPDATE_USERS_SQL = "update customer set name_customer = ?,email_customer= ?, address_customer=?,birth_customer=?,phoneNumber_customer =? where id_customer=?;";
 
     @Override
     public void insertCustomer(Customer customer) throws SQLException {
@@ -35,11 +35,7 @@ public class CustomerDAO implements ICustomerDao {
         Customer customer=null;
         try(Connection connection=DB.getConnection();
             PreparedStatement preparedStatement= connection.prepareStatement(SELlEC_CUSTOMER_ByID )) {
-            preparedStatement.setString(1,"name_customer");
-            preparedStatement.setString(2,"email_customer");
-            preparedStatement.setString(3,"address_customer");
-            preparedStatement.setString(4,"phoneNumber_customer");
-            preparedStatement.setString(5, "birth_customer");
+            preparedStatement.setInt(1,id_customer);
             System.out.println(preparedStatement);
             ResultSet resultSet=preparedStatement.executeQuery();
             while (resultSet.next()){
@@ -81,10 +77,10 @@ public class CustomerDAO implements ICustomerDao {
     }
 
     @Override
-    public boolean deleteCustomer(int id_customer) throws SQLException {
+    public boolean deleteCustomer(int id) throws SQLException {
         boolean rowDeleted;
         try (Connection connection = DB.getConnection(); PreparedStatement statement = connection.prepareStatement(DELETE_USERS_SQL);) {
-            statement.setInt(1, id_customer);
+            statement.setInt(1, id);
             rowDeleted = statement.executeUpdate() > 0;
         }
         return rowDeleted;
@@ -93,12 +89,15 @@ public class CustomerDAO implements ICustomerDao {
     @Override
     public boolean updateCustomer(Customer customer) throws SQLException {
         boolean rowUpdated;
-        try (Connection connection = DB.getConnection(); PreparedStatement statement = connection.prepareStatement(UPDATE_USERS_SQL);) {
+        try (Connection connection = DB.getConnection();
+             PreparedStatement statement = connection.prepareStatement(UPDATE_USERS_SQL);)
+        {
             statement.setString(1, customer.getName_customer());
             statement.setString(2, customer.getEmail_customer());
             statement.setString(3, customer.getAddress_customer());
-            statement.setString(4, customer.getPhoneNumber_customer());
-            statement.setString(5, customer.getBirth_customer());
+            statement.setString(4, customer.getBirth_customer());
+            statement.setString(5, customer.getPhoneNumber_customer());
+            statement.setInt(6, customer.getId_customer());
 
             rowUpdated = statement.executeUpdate() > 0;
         }

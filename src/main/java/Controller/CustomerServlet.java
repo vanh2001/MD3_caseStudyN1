@@ -8,8 +8,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.time.Instant;
-import java.util.Date;
+
 import java.util.List;
 
 @WebServlet(name = "CustomerServlet", value = "/CustomerServlet")
@@ -104,27 +103,27 @@ public class CustomerServlet extends HttpServlet {
 
     }
 
+    private void updateCustomer(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
+        int id =Integer.parseInt(request.getParameter("id"));
+        String name_customer=request.getParameter("name_customer");
+        String email_customer=request.getParameter("email_customer");
+        String address_customer=request.getParameter("address_customer");
+        String birth_customer=request.getParameter("birth_customer");
+        String phoneNumber_customer=request.getParameter("phoneNumber_customer");
+
+        Customer customer=new Customer(id,name_customer,birth_customer,address_customer,email_customer,phoneNumber_customer);
+        customerDao.updateCustomer(customer);
+        RequestDispatcher requestDispatcher=request.getRequestDispatcher("customer/edit.jsp");
+        requestDispatcher.forward(request,response);
+    }
+
     private void deleteCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
-        int id_customer = Integer.parseInt(request.getParameter("id_customer"));
-        customerDao.deleteCustomer(id_customer);
+        int id = Integer.parseInt(request.getParameter("id"));
+        customerDao.deleteCustomer(id);
 
         List<Customer> customerList = customerDao.selectAllCustomer();
         request.setAttribute("customerList", customerList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("customer/list.jsp");
-        dispatcher.forward(request, response);
-    }
-
-    private void updateCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
-        int id_customer = Integer.parseInt(request.getParameter("id_customer"));
-        String name_customer = request.getParameter("name_customer");
-        String email_customer = request.getParameter("email_customer");
-        String address_customer = request.getParameter("address_customer");
-        String birth_customer=request.getParameter("birth_customer");
-        String phoneNumber_customer=request.getParameter("phoneNumber_customer");
-
-        Customer customer = new Customer(id_customer, name_customer, email_customer, address_customer,birth_customer,phoneNumber_customer);
-        customerDao.updateCustomer(customer);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("customer/edit.jsp");
         dispatcher.forward(request, response);
     }
 

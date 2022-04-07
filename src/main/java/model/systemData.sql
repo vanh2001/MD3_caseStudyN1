@@ -71,3 +71,5 @@ create table LibrarianBean(
                       foreign key (id_title_book) references TitleBook(id_title_book),
                       foreign key (id_customer) references Customer(id_customer)
 );
+
+insert into customer(name_customer, birth_customer, address_customer, email_customer, phoneNumber_customer) values ('Ngo Van Kieu','1990/2/6','NamDinh','kieu@gmail.com','0967345265');
