@@ -33,10 +33,10 @@ public class UserDAO {
             Connection connection = DB.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement("update user set name_of_user = ?, email_user = ?, password_user = ?, phone_number = ? when id_user = ?");
             preparedStatement.setString(1, bean.getNameUser());
-            preparedStatement.setString(1, bean.getEmailUser());
-            preparedStatement.setString(1, bean.getPasswordUser());
-            preparedStatement.setLong(1, bean.getPhoneUser());
-            preparedStatement.setInt(1, bean.getIdUser());
+            preparedStatement.setString(2, bean.getEmailUser());
+            preparedStatement.setString(3, bean.getPasswordUser());
+            preparedStatement.setLong(4, bean.getPhoneUser());
+            preparedStatement.setInt(5, bean.getIdUser());
             status = preparedStatement.executeUpdate();
             connection.close();
         }catch (Exception e) {
