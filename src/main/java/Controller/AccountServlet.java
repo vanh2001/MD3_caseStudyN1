@@ -26,12 +26,12 @@ public class AccountServlet extends HttpServlet {
         }
         switch (action) {
             case "admin":
-                request.getRequestDispatcher("/LoginForm/loginadminform.jsp").forward(request,response);
+                request.getRequestDispatcher("/loginadminform.jsp").forward(request,response);
                 break;
             case "user":
-                request.getRequestDispatcher("/LoginForm/loginuser.jsp").forward(request, response);
+                request.getRequestDispatcher("/loginUser.jsp").forward(request, response);
             case "adduser":
-                request.getRequestDispatcher("/LoginForm/adduser.jsp").forward(request,response);
+                request.getRequestDispatcher("/adduser.jsp").forward(request,response);
                 break;
             case "showuser":
                 List<User> list2 = UserDAO.view();
@@ -67,7 +67,7 @@ public class AccountServlet extends HttpServlet {
             case "admin":
                 String email = request.getParameter("email");
                 String password = request.getParameter("password");
-                if (email.equals("admin@gmail.com") && password.equals("123456")) {
+                if (email.equals("admin@gmail.com") && password.equals("12345")) {
                     HttpSession session = request.getSession();
                     session.setAttribute("admin","true");
                     request.getRequestDispatcher("adminSection.jsp").forward(request,response);

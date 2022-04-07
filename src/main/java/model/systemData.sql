@@ -65,6 +65,8 @@ create table LoanSlipDetails(
 create table LibrarianBean(
                       id_librarian_bean int auto_increment primary key,
                       name_librarian_bean varchar(60),
+                      email_librabian_bean varchar(60),
+                      password_librabian_bean varchar(20),
                       phone_librarian_bean varchar(12),
                       id_title_book int,
                       id_customer int,
