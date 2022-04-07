@@ -24,6 +24,8 @@ create table TitleBook(
 );
 insert into TitleBook(id_title_book, name_title_book) VALUES (1,"Sách thiếu nhi");
 
+
+
 create table Book(
                      id_book int auto_increment primary key,
                      id_title_book int,
@@ -74,3 +76,4 @@ create table LibrarianBean(
                       foreign key (id_title_book) references TitleBook(id_title_book),
                       foreign key (id_customer) references Customer(id_customer)
 );
+select id_title_book,name_book, description_book, amount_book, kind_book, publishing_book, status_book from Book where id_book=1;

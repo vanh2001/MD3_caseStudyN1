@@ -1,14 +1,14 @@
 package model.Management;
 
 public class Book {
-    int id_book;
-    int id_title_book;
-    String name_book;
-    String description_book;
-    int amount_book;
-    String kind_book;
-    String publishing_book;
-    String status_book;
+    private int id_book;
+    private int id_title_book;
+    private String name_book;
+    private String description_book;
+    private int amount_book;
+    private String kind_book;
+    private String publishing_book;
+    private String status_book;
 
     public Book() {
     }

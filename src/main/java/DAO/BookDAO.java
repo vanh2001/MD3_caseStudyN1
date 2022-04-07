@@ -14,9 +14,9 @@ public class BookDAO implements IBookDAO{
     }
 
     public static final String DELETE_BOOK = "delete from Book where id_book=?";
-    public static final String EDIT_BOOk = "update Book set id_title_book=?, set name_book=?, set description_book=?, set amount_book=?, set kind_book=?, set publishing_book=?, set status_book=? where id=?";
+    public static final String EDIT_BOOk = "update Book set id_title_book=?, name_book=?, description_book=?, amount_book=?, kind_book=?, publishing_book=?, status_book=? where id_book=?";
     public static final String INSERT_BOOK = "insert into Book(id_title_book, name_book, description_book, amount_book, kind_book, publishing_book, status_book) value (?,?,?,?,?,?,?)";
-    public static final String SELECT_BOOK_BY_ID = "select id_title_book,name_book, description_book, amount_book, kind_book, publishing_book, status_book from Book where id=?";
+    public static final String SELECT_BOOK_BY_ID = "select id_title_book,name_book, description_book, amount_book, kind_book, publishing_book, status_book from Book where id_book=?";
     public static final String SELECT_LIST_BOOK = "select * from Book";
 
     @Override
@@ -26,7 +26,7 @@ public class BookDAO implements IBookDAO{
                 Connection connection = DB.getConnection();
                 PreparedStatement preparedStatement = connection.prepareStatement(INSERT_BOOK)
         ){
-            preparedStatement.setInt(1,book.getId_book());
+            preparedStatement.setInt(1,book.getId_title_book());
             preparedStatement.setString(2,book.getName_book());
             preparedStatement.setString(3,book.getDescription_book());
             preparedStatement.setInt(4,book.getAmount_book());
@@ -55,7 +55,7 @@ public class BookDAO implements IBookDAO{
                 int id_title_book = resultSet.getInt("id_title_book");
                 String name_book = resultSet.getString("name_book");
                 String description_book = resultSet.getString("description_book");
-                int amount_book = resultSet.getInt("anount_book");
+                int amount_book = resultSet.getInt("amount_book");
                 String kind_book = resultSet.getString("kind_book");
                 String publishing_book = resultSet.getString("publishing_book");
                 String status_book = resultSet.getString("status_book");
@@ -119,7 +119,7 @@ public class BookDAO implements IBookDAO{
             statement.setString(5, book.getKind_book());
             statement.setString(6, book.getPublishing_book());
             statement.setString(7, book.getStatus_book());
-
+            statement.setInt(8,book.getId_book());
             rowUpdated = statement.executeUpdate() > 0;
         }
         return rowUpdated;

@@ -44,6 +44,10 @@
             <td><c:out value="${books.kind_book}"/></td>
             <td><c:out value="${books.publishing_book}"/></td>
             <td><c:out value="${books.status_book}"/></td>
+            <td>
+                <a href="/book?action=edit&id_book=${books.id_book}">Edit</a>
+                <a href="/book?action=delete&id_book=${books.id_book}">Delete</a>
+            </td>
         </tr>
 
         </c:forEach>
