@@ -68,12 +68,11 @@ create table LoanSlipDetails(
 );
 
 create table LibrarianBean(
-
-                      id_librarian_bean int auto_increment primary key,
-                      name_librarian_bean varchar(60),
-                      phone_librarian_bean varchar(12),
-                      id_title_book int,
-                      id_customer int,
-                      foreign key (id_title_book) references TitleBook(id_title_book),
-                      foreign key (id_customer) references Customer(id_customer)
+    id_librarian_bean int auto_increment primary key,
+    name_librarian_bean varchar(60),
+    phone_librarian_bean varchar(12),
+    id_title_book int,
+    id_customer int,
+    foreign key (id_title_book) references TitleBook(id_title_book),
+    foreign key (id_customer) references Customer(id_customer)
 );
