@@ -105,7 +105,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# Connection
-/src/main/java/Connection/
+# connection
+/src/main/java/connection/
 
 .idea
