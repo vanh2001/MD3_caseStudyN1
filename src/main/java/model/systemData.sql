@@ -1,5 +1,5 @@
-create database LibraryManagement1;
-use LibraryManagement1;
+create database LibraryManagement;
+use LibraryManagement;
 
 create table User(
                      id_user int auto_increment primary key,
@@ -76,4 +76,9 @@ create table LibrarianBean(
                       foreign key (id_title_book) references TitleBook(id_title_book),
                       foreign key (id_customer) references Customer(id_customer)
 );
+<<<<<<< HEAD
 select id_title_book,name_book, description_book, amount_book, kind_book, publishing_book, status_book from Book where id_book=1;
+=======
+
+insert into customer(name_customer, birth_customer, address_customer, email_customer, phoneNumber_customer) values ('Ngo Van Kieu','1990/2/6','NamDinh','kieu@gmail.com','0967345265');
+>>>>>>> master
