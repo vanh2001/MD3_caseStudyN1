@@ -42,7 +42,7 @@ public class BookServlet extends HttpServlet {
         } catch (SQLException ex) {
             throw new ServletException(ex);
         }
-        }
+    }
 
     private void deleteBook(HttpServletRequest request, HttpServletResponse response)
     throws SQLException, IOException, ServletException{

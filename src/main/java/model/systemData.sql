@@ -67,6 +67,8 @@ create table LoanSlipDetails(
     foreign key (id_book) references Book(id_book)
 );
 
+select * from LoanSlip;
+
 create table LibrarianBean(
     id_librarian_bean int auto_increment primary key,
     name_librarian_bean varchar(60),

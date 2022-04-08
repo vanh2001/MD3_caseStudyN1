@@ -18,6 +18,13 @@ public class LoanSlip {
         this.statusLoanSlip = statusLoanSlip;
     }
 
+    public LoanSlip(int customerId, String loanSlipBorrowedDate, String loanSlipReturnedDate, String statusLoanSlip) {
+        this.customerId = customerId;
+        this.loanSlipBorrowedDate = loanSlipBorrowedDate;
+        this.loanSlipReturnedDate = loanSlipReturnedDate;
+        this.statusLoanSlip = statusLoanSlip;
+    }
+
     public int getLoanSlipId() {
         return loanSlipId;
     }

@@ -5,12 +5,15 @@ import connection.SingletonConnection;
 import model.Management.LoanSlip;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoanSlipDao implements ILoanSlipDao {
 
     public static final String INSERT_LOANSLIP_SQL = "insert into LoanSlip (id_customer, borrowedDate_loan_slip, returnedDate_loan_slip, status_loanSlip) VALUES (?,?,?,?);";
     public static final String INSERT_LOANSLIP_DETAILS = "insert into LoanSlipDetails (id_loanSlip, id_book) VALUES (?,?);";
     public static final String UPDATE_LOANSLIP_SQL = "UPDATE LoanSlip set status_loanSlip = ? where id_loanSlip = ?;";
+    public static final String SELECT_ALL_LOANSLIP = "select * from LoanSlip;";
 
     @Override
     public void addLoanSlipDetailsTransaction(LoanSlip loanSlip, int[] books) {
@@ -78,5 +81,27 @@ public class LoanSlipDao implements ILoanSlipDao {
             rowUpate = preparedStatement.executeUpdate() > 0;
         }
         return rowUpate;
+    }
+
+    @Override
+    public List<LoanSlip> selectAllLoanSlip() {
+        List<LoanSlip> loanSlip = new ArrayList<>();
+        try(
+                Connection connection = SingletonConnection.getConnection();
+                PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_LOANSLIP);
+                ){
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()){
+                int idLoanSlip = rs.getInt("id_loanSlip");
+                int idCustomer = rs.getInt("id_customer");
+                String borrowedDate= rs.getString("borrowedDate_loan_slip");
+                String returnedDate = rs.getString("returnedDate_loan_slip");
+                String status = rs.getString("status_loanSlip");
+                loanSlip.add(new LoanSlip(idLoanSlip,idCustomer,borrowedDate,returnedDate,status));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return loanSlip;
     }
 }
