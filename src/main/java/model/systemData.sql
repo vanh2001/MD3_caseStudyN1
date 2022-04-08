@@ -65,8 +65,19 @@ create table LoanSlipDetails(
 create table LibrarianBean(
                       id_librarian_bean int auto_increment primary key,
                       name_librarian_bean varchar(60),
+<<<<<<< HEAD
                       email_librabian_bean varchar(60),
                       password_librabian_bean varchar(20),
                       phone_librarian_bean varchar(12)
 );
 
+=======
+                      phone_librarian_bean varchar(12),
+                      id_title_book int,
+                      id_customer int,
+                      foreign key (id_title_book) references TitleBook(id_title_book),
+                      foreign key (id_customer) references Customer(id_customer)
+);
+
+insert into customer(name_customer, birth_customer, address_customer, email_customer, phoneNumber_customer) values ('Ngo Van Kieu','1990/2/6','NamDinh','kieu@gmail.com','0967345265');
+>>>>>>> 04541321e84eaa75d3bcefd1e5b46f5483f37c09

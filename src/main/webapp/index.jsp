@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
 <head>
   <meta charset="UTF-8">
   <title>Index</title>
@@ -78,3 +79,17 @@
 
 </body>
 </html>
+=======
+  <head>
+    <title>Customer</title>
+    <style>
+      body {
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+  <h1 style="background-color:DodgerBlue;">Ối....ZỒi....Ôi...</h1>
+  </body>
+</html>
+>>>>>>> 04541321e84eaa75d3bcefd1e5b46f5483f37c09
